@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>富春居 | 长久富足，安稳生活</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⛰️</text></svg>">
+</head>
+<body>
+    <!-- 山水背景 -->
+    <div class="mountain-bg">
+        <svg class="mountain-svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+            <path fill="rgba(91, 122, 94, 0.08)" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="rgba(122, 158, 142, 0.06)" d="M0,256L48,261.3C96,267,192,277,288,266.7C384,256,480,224,576,213.3C672,203,768,213,864,234.7C960,256,1056,288,1152,277.3C1248,267,1344,213,1392,186.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
+    </div>
+
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="nav-icon">⛰️</span>
+            <span class="nav-title">富春居</span>
+        </div>
+        <div class="nav-links">
+            <a href="#home" class="nav-link active">首页</a>
+            <a href="#analysis" class="nav-link">财务分析</a>
+            <a href="#experts" class="nav-link">智者议事</a>
+            <a href="#about" class="nav-link">关于</a>
+        </div>
+    </nav>
+
+    <!-- 首页 Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">富春居</h1>
+            <p class="hero-subtitle">FUCHUN · 智能财务顾问</p>
+            <p class="hero-motto">「长久富足，安稳生活」</p>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="scrollToSection('analysis')">
+                    🌿 开启财富之旅
+                </button>
+            </div>
+        </div>
+        <div class="hero-features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>智能分析</h3>
+                <p>四位智者协同分析<br>洞察消费规律</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>量身定制</h3>
+                <p>基于您的实际情况<br>规划财富之道</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌿</div>
+                <h3>稳健致远</h3>
+                <p>循序渐进改善<br>积少成多致富</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 财务分析区 -->
+    <section id="analysis" class="analysis-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">📊</span>
+                财务分析
+            </h2>
+
+            <!-- 案例选择 -->
+            <div class="case-selector">
+                <h3>选择案例</h3>
+                <div class="case-buttons">
+                    <button class="case-btn active" data-case="a">
+                        <span class="case-icon">🏃</span>
+                        <span class="case-name">月光族小张</span>
+                        <span class="case-desc">适合需要改善财务状况</span>
+                    </button>
+                    <button class="case-btn" data-case="b">
+                        <span class="case-icon">💎</span>
+                        <span class="case-name">存钱达人小李</span>
+                        <span class="case-desc">适合学习优秀习惯</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 开始按钮 -->
+            <div class="start-section">
+                <button class="btn-analyze" id="startAnalysis">
+                    🎋 开始分析
+                </button>
+            </div>
+
+            <!-- 分析结果面板 -->
+            <div class="results-panel" id="resultsPanel" style="display: none;">
+                <!-- 概览卡片 -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value" id="totalExpense">--</div>
+                        <div class="metric-label">总支出</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="savingsRate">--</div>
+                        <div class="metric-label">储蓄率</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-grade" id="healthGrade">--</div>
+                        <div class="metric-label">健康等级</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value" id="savingsPotential">--</div>
+                        <div class="metric-label">月节省潜力</div>
+                    </div>
+                </div>
+
+                <!-- 标签页 -->
+                <div class="tabs">
+                    <div class="tab-header">
+                        <button class="tab-btn active" data-tab="consumption">消费分析</button>
+                        <button class="tab-btn" data-tab="experts">智者议事</button>
+                        <button class="tab-btn" data-tab="budget">预算方略</button>
+                        <button class="tab-btn" data-tab="action">行动指南</button>
+                    </div>
+
+                    <!-- 消费分析 -->
+                    <div class="tab-content active" id="tab-consumption">
+                        <div class="consumption-chart">
+                            <h4>消费分布</h4>
+                            <div class="progress-list" id="consumptionList">
+                                <!-- 动态生成 -->
+                            </div>
+                        </div>
+                        <div class="insights-panel">
+                            <h4>💡 消费洞察</h4>
+                            <div id="insightsList">
+                                <!-- 动态生成 -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 智者议事 -->
+                    <div class="tab-content" id="tab-experts">
+                        <div class="experts-grid">
+                            <div class="expert-card-v2">
+                                <div class="expert-header">
+                                    <span class="expert-emoji">🎋</span>
+                                    <div class="expert-info">
+                                        <h4>记账先生</h4>
+                                        <span>明察秋毫，梳理收支</span>
+                                    </div>
+                                </div>
+                                <p class="expert-opinion" id="accountantOpinion">点击分析查看...</p>
+                            </div>
+                            <div class="expert-card-v2">
+                                <div class="expert-header">
+                                    <span class="expert-emoji">📜</span>
+                                    <div class="expert-info">
+                                        <h4>预算主事</h4>
+                                        <span>统筹规划，量入为出</span>
+                                    </div>
+                                </div>
+                                <p class="expert-opinion" id="budgetOpinion">点击分析查看...</p>
+                            </div>
+                            <div class="expert-card-v2">
+                                <div class="expert-header">
+                                    <span class="expert-emoji">💰</span>
+                                    <div class="expert-info">
+                                        <h4>储蓄谋士</h4>
+                                        <span>运筹帷幄，积少成多</span>
+                                    </div>
+                                </div>
+                                <p class="expert-opinion" id="savingsOpinion">点击分析查看...</p>
+                            </div>
+                            <div class="expert-card-v2">
+                                <div class="expert-header">
+                                    <span class="expert-emoji">🛡️</span>
+                                    <div class="expert-info">
+                                        <h4>风控管家</h4>
+                                        <span>居安思危，稳健致远</span>
+                                    </div>
+                                </div>
+                                <p class="expert-opinion" id="riskOpinion">点击分析查看...</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 预算方略 -->
+                    <div class="tab-content" id="tab-budget">
+                        <h4>50/30/20 财富分配法</h4>
+                        <div class="budget-allocation">
+                            <div class="budget-item">
+                                <div class="budget-icon">🏠</div>
+                                <div class="budget-percent">50%</div>
+                                <div class="budget-name">必需支出</div>
+                                <div class="budget-amount" id="essentialBudget">--</div>
+                            </div>
+                            <div class="budget-item">
+                                <div class="budget-icon">🎋</div>
+                                <div class="budget-percent">30%</div>
+                                <div class="budget-name">品质生活</div>
+                                <div class="budget-amount" id="discretionaryBudget">--</div>
+                            </div>
+                            <div class="budget-item">
+                                <div class="budget-icon">💎</div>
+                                <div class="budget-percent">20%</div>
+                                <div class="budget-name">财富积累</div>
+                                <div class="budget-amount" id="savingsBudget">--</div>
+                            </div>
+                        </div>
+                        <div class="savings-challenge">
+                            <h4>🎯 储蓄挑战</h4>
+                            <div class="challenge-stats">
+                                <div class="challenge-item">
+                                    <span class="challenge-value" id="monthlyPotential">--</span>
+                                    <span class="challenge-label">每月可节省</span>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-value" id="threeMonthGoal">--</span>
+                                    <span class="challenge-label">三月目标</span>
+                                </div>
+                                <div class="challenge-item">
+                                    <span class="challenge-badge" id="recommendedChallenge">--</span>
+                                    <span class="challenge-label">推荐挑战</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 行动指南 -->
+                    <div class="tab-content" id="tab-action">
+                        <h4>您的行动指南</h4>
+                        <div class="action-list" id="actionList">
+                            <!-- 动态生成 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">⛰️</span>
+                关于富春居
+            </h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>品牌寓意</h3>
+                    <p><strong>富春居</strong>取意元代画家黄公望传世名作《富春山居图》：</p>
+                    <ul>
+                        <li><strong>富</strong> — 长久富足，财务自由</li>
+                        <li><strong>春</strong> — 生机盎然，稳健增长</li>
+                        <li><strong>居</strong> — 安稳居所，心灵归属</li>
+                    </ul>
+                    <p>寓意如富春山水般绵延不绝的财富，安稳祥和的生活。</p>
+                </div>
+                <div class="about-tech">
+                    <h3>技术架构</h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag">多智能体协作</span>
+                        <span class="tech-tag">50/30/20预算法则</span>
+                        <span class="tech-tag">风险评估模型</span>
+                        <span class="tech-tag">水墨山水UI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">富春居</h3>
+            <p class="footer-poem">「智者乐山，仁者乐水」</p>
+            <p class="footer-desc">愿您在富春山居之间，找到属于自己的财富之道</p>
+            <p class="footer-copy">基于多智能体协作技术 · 传承东方财富智慧 · © 2024</p>
+        </div>
+    </footer>
+
+    <!-- 加载动画 -->
+    <div class="loading-overlay" id="loadingOverlay" style="display: none;">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p>🎋 富春居智者们正在商议...</p>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

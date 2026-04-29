@@ -1,0 +1,810 @@
+/* ==================== 富春居 - 山水主题样式 ====================
+ * 配色灵感：富春山居图
+ * 山青：#5B7A5E  水碧：#7A9E8E  云白：#F7F3E9
+ * 墨棕：#6B5344  赭石：#A67B5B
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+:root {
+    --mountain-green: #5B7A5E;
+    --water-blue: #7A9E8E;
+    --cloud-white: #F7F3E9;
+    --ink-brown: #6B5344;
+    --ochre: #A67B5B;
+    --light-ochre: #D4A574;
+    --bg-cream: #EDE8DC;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --shadow: rgba(91, 122, 94, 0.1);
+    --gradient-primary: linear-gradient(135deg, #5B7A5E 0%, #7A9E8E 100%);
+    --gradient-warm: linear-gradient(135deg, #A67B5B 0%, #D4A574 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Serif SC', serif;
+    background: linear-gradient(180deg, var(--cloud-white) 0%, var(--bg-cream) 100%);
+    color: var(--ink-brown);
+    line-height: 1.8;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ==================== 山水背景 ==================== */
+.mountain-bg {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40vh;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.mountain-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==================== 导航栏 ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(247, 243, 233, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(166, 123, 91, 0.15);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(91, 122, 94, 0.08);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-icon {
+    font-size: 1.8rem;
+}
+
+.nav-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--mountain-green);
+    letter-spacing: 0.2em;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--ink-brown);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.05em;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(91, 122, 94, 0.1);
+    color: var(--mountain-green);
+}
+
+/* ==================== Hero 区域 ==================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 80px;
+    text-align: center;
+}
+
+.hero-content {
+    margin-bottom: 60px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.3em;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--ink-brown);
+    letter-spacing: 0.5em;
+    margin-bottom: 15px;
+}
+
+.hero-motto {
+    font-size: 1.1rem;
+    color: var(--ochre);
+    font-style: italic;
+    letter-spacing: 0.2em;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    padding: 16px 48px;
+    font-size: 1.1rem;
+    font-family: 'Noto Serif SC', serif;
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(91, 122, 94, 0.3);
+    letter-spacing: 0.15em;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(91, 122, 94, 0.4);
+}
+
+.hero-features {
+    display: flex;
+    gap: 30px;
+    max-width: 1000px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 35px 30px;
+    border: 1px solid rgba(166, 123, 91, 0.15);
+    box-shadow: 0 8px 30px var(--shadow);
+    transition: all 0.4s ease;
+    flex: 1;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(91, 122, 94, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    color: var(--mountain-green);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    letter-spacing: 0.1em;
+}
+
+.feature-card p {
+    color: var(--ink-brown);
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* ==================== 分析区域 ==================== */
+.analysis-section {
+    padding: 100px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--mountain-green);
+    margin-bottom: 50px;
+    letter-spacing: 0.15em;
+}
+
+.title-icon {
+    margin-right: 15px;
+}
+
+/* 案例选择 */
+.case-selector {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(166, 123, 91, 0.15);
+}
+
+.case-selector h3 {
+    color: var(--ink-brown);
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+.case-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.case-btn {
+    flex: 1;
+    padding: 25px;
+    background: rgba(237, 232, 220, 0.5);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-family: 'Noto Serif SC', serif;
+}
+
+.case-btn:hover {
+    background: rgba(91, 122, 94, 0.08);
+    border-color: var(--mountain-green);
+}
+
+.case-btn.active {
+    background: rgba(91, 122, 94, 0.12);
+    border-color: var(--mountain-green);
+}
+
+.case-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.case-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--mountain-green);
+    display: block;
+    margin-bottom: 5px;
+}
+
+.case-desc {
+    font-size: 0.9rem;
+    color: var(--ink-brown);
+}
+
+/* 开始按钮 */
+.start-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.btn-analyze {
+    padding: 18px 60px;
+    font-size: 1.2rem;
+    font-family: 'Noto Serif SC', serif;
+    background: var(--gradient-warm);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(166, 123, 91, 0.3);
+    letter-spacing: 0.15em;
+}
+
+.btn-analyze:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(166, 123, 91, 0.4);
+}
+
+/* 结果面板 */
+.results-panel {
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 指标网格 */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.metric-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px 15px;
+    text-align: center;
+    border: 1px solid rgba(166, 123, 91, 0.15);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+}
+
+.metric-grade {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    margin: 0 auto 8px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+}
+
+.metric-grade.grade-a { background: linear-gradient(145deg, #5B7A5E, #4A6350); }
+.metric-grade.grade-b { background: linear-gradient(145deg, #7A9E8E, #6B8E7D); }
+.metric-grade.grade-c { background: linear-gradient(145deg, #A67B5B, #8B6914); }
+.metric-grade.grade-d { background: linear-gradient(145deg, #8B5344, #6B3E32); }
+
+.metric-label {
+    color: var(--ink-brown);
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+}
+
+/* 标签页 */
+.tabs {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(166, 123, 91, 0.15);
+}
+
+.tab-header {
+    display: flex;
+    background: rgba(237, 232, 220, 0.5);
+    padding: 8px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 14px;
+    background: transparent;
+    border: none;
+    font-family: 'Noto Serif SC', serif;
+    font-size: 1rem;
+    color: var(--ink-brown);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    letter-spacing: 0.05em;
+}
+
+.tab-btn:hover {
+    background: rgba(91, 122, 94, 0.08);
+}
+
+.tab-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    padding: 30px;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 消费分析 */
+.consumption-chart {
+    margin-bottom: 30px;
+}
+
+.consumption-chart h4 {
+    color: var(--mountain-green);
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+.progress-item {
+    margin-bottom: 18px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.progress-label {
+    color: var(--mountain-green);
+    font-weight: 600;
+}
+
+.progress-value {
+    color: var(--ink-brown);
+}
+
+.progress-bar {
+    height: 12px;
+    background: rgba(237, 232, 220, 0.8);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: var(--gradient-primary);
+    transition: width 0.6s ease;
+}
+
+.insights-panel {
+    background: rgba(91, 122, 94, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.insights-panel h4 {
+    color: var(--mountain-green);
+    margin-bottom: 15px;
+}
+
+.insight-item {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border-left: 3px solid var(--mountain-green);
+    color: var(--ink-brown);
+}
+
+/* 智者卡片 */
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.expert-card-v2 {
+    background: rgba(247, 243, 233, 0.8);
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 4px solid var(--mountain-green);
+}
+
+.expert-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.expert-emoji {
+    font-size: 2rem;
+}
+
+.expert-info h4 {
+    color: var(--mountain-green);
+    margin-bottom: 4px;
+}
+
+.expert-info span {
+    color: var(--ochre);
+    font-size: 0.85rem;
+}
+
+.expert-opinion {
+    color: var(--ink-brown);
+    line-height: 1.8;
+    font-style: italic;
+}
+
+/* 预算方略 */
+.budget-allocation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.budget-item {
+    background: rgba(247, 243, 233, 0.8);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid rgba(166, 123, 91, 0.15);
+}
+
+.budget-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.budget-percent {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--mountain-green);
+}
+
+.budget-name {
+    color: var(--ink-brown);
+    margin: 8px 0;
+    letter-spacing: 0.1em;
+}
+
+.budget-amount {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ochre);
+}
+
+.savings-challenge {
+    background: rgba(247, 243, 233, 0.8);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.savings-challenge h4 {
+    color: var(--mountain-green);
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+.challenge-stats {
+    display: flex;
+    justify-content: space-around;
+}
+
+.challenge-item {
+    text-align: center;
+}
+
+.challenge-value {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--mountain-green);
+    margin-bottom: 5px;
+}
+
+.challenge-badge {
+    display: inline-block;
+    background: rgba(166, 123, 91, 0.15);
+    color: var(--ochre);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.challenge-label {
+    display: block;
+    color: var(--ink-brown);
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* 行动指南 */
+.action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.action-item {
+    background: rgba(247, 243, 233, 0.8);
+    border-radius: 0 12px 12px 0;
+    padding: 20px;
+    border-left: 4px solid var(--ochre);
+}
+
+.action-item.high { border-left-color: #8B5344; background: rgba(139, 83, 68, 0.08); }
+.action-item.medium { border-left-color: var(--ochre); }
+.action-item.low { border-left-color: var(--mountain-green); background: rgba(91, 122, 94, 0.08); }
+
+.action-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.action-title {
+    font-weight: 600;
+    color: var(--mountain-green);
+    font-size: 1.1rem;
+}
+
+.action-priority {
+    background: rgba(166, 123, 91, 0.15);
+    color: var(--ochre);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.action-impact {
+    color: var(--ink-brown);
+    font-size: 0.95rem;
+}
+
+/* ==================== 关于区域 ==================== */
+.about-section {
+    padding: 100px 20px;
+    background: rgba(237, 232, 220, 0.5);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text h3,
+.about-tech h3 {
+    color: var(--mountain-green);
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: var(--ink-brown);
+}
+
+.about-text ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-text li {
+    margin-bottom: 10px;
+    color: var(--ink-brown);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tech-tag {
+    background: rgba(91, 122, 94, 0.1);
+    color: var(--mountain-green);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* ==================== 页脚 ==================== */
+.footer {
+    padding: 60px 20px;
+    background: rgba(91, 122, 94, 0.08);
+    text-align: center;
+    border-top: 1px solid rgba(166, 123, 91, 0.15);
+}
+
+.footer-title {
+    font-size: 1.8rem;
+    color: var(--mountain-green);
+    letter-spacing: 0.3em;
+    margin-bottom: 15px;
+}
+
+.footer-poem {
+    font-size: 1.1rem;
+    color: var(--ochre);
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.footer-desc {
+    color: var(--ink-brown);
+    margin-bottom: 20px;
+}
+
+.footer-copy {
+    color: var(--ochre);
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ==================== 加载动画 ==================== */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(247, 243, 233, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(91, 122, 94, 0.2);
+    border-top-color: var(--mountain-green);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-content p {
+    color: var(--mountain-green);
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+}
+
+/* ==================== 响应式设计 ==================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-features {
+        flex-direction: column;
+    }
+
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .case-buttons {
+        flex-direction: column;
+    }
+
+    .experts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .budget-allocation {
+        grid-template-columns: 1fr;
+    }
+
+    .challenge-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
